@@ -10,12 +10,17 @@ databases, its ease of use for end users and its ease of use with business intel
 Instructions for how to run assumes the following are installed:
 * python 3.6+ and pip
 * a package for managing virtual environments (e.g [venv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)) 
-* configure your AWS credentials, as described in [Quickstart](https://boto3.amazonaws.com/v1/documentation/api/1.9.42/guide/quickstart.html).
+* an AWS account
+* configured AWS credentials, as described in [Quickstart](https://boto3.amazonaws.com/v1/documentation/api/1.9.42/guide/quickstart.html).
         
 Prior to running the code the following can be done on the command line:
-* Navigate to empty folder
+* Navigate to folder where the repository will be stored
     ```commandline
     cd ~/path_to_folder/
+    ``` 
+* Clone the repository
+    ```commandline
+    git clone git@github.com:paulb17/sparkify_cloud_etl.git
     ``` 
 * Create and activate a virtual environment
     ```commandline
