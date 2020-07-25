@@ -1,0 +1,7 @@
+*.DS_Store
+.ipynb_checkpoints/
+*__pycache__/
+sparkify_cloud_etl/venv/
+*.xml
+*.idea/
+venv/
