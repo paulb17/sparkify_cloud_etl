@@ -41,7 +41,7 @@ class RoleManager:
             else:
                 raise
 
-    def attach_role(self):
+    def attach_role_policy(self):
 
         for arn_policy in self.policy_arns:
             self.iam.attach_role_policy(
@@ -49,8 +49,8 @@ class RoleManager:
                 PolicyArn=arn_policy
             )
 
-    def get_role(self):
-        return self.iam.get_role(RoleName=self.role_name)['Role']['Arn']
+    def get_role_arn(self):
+        return self.iam.get_role_arn(RoleName=self.role_name)['Role']['Arn']
 
     def delete_role(self):
         for arn_policy in self.policy_arns:

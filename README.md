@@ -1,11 +1,11 @@
-# Sparkify Analytics Database
+# Sparkify Cloud ETL
 
 ## Introduction
 This project involved designing and creating an analytics database in the cloud for a hypothetical start up called Sparkify. 
 Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. 
-To this end, a simple python based ETL pipeline was developed to extract data from local sources and load it into a star 
-schema design. The choice to use a star schema was based on its high query performance relative to non-dimensional 
-databases, its ease of use for end users and its ease of use with business intelligence tools.
+To this end, a python based ETL pipeline was developed to extract data from S3, load it into staging tables on redshift, 
+and insert the data into a star schema.
+
 ## Requirements
 Instructions for how to run assumes the following are installed:
 * python 3.6+ and pip
@@ -22,6 +22,12 @@ Prior to running the code the following can be done on the command line:
     ```commandline
     git clone git@github.com:paulb17/sparkify_cloud_etl.git
     ``` 
+  
+* Change directoty to the sparkify_cloud_etl folder
+    ```commandline
+    cd sparkify_cloud_etl
+    ``` 
+    
 * Create and activate a virtual environment
     ```commandline
      python3 -m venv venv

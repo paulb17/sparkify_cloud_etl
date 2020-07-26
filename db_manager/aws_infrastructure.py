@@ -23,9 +23,9 @@ class CloudServiceInitializer:
     def set_up_iam_role(self):
         logger.info("Setting up IAM role for Redshift Cluster")
         self.role_manager.create_role()
-        self.role_manager.attach_role()
+        self.role_manager.attach_role_policy()
 
-        return self.role_manager.get_role()
+        return self.role_manager.get_role_arn()
 
     def set_up_redshift_cluster(self, role_arn=None):
 
@@ -46,5 +46,6 @@ class CloudServiceInitializer:
         self.cluster_manager.open_port(cluster_properties)
 
     def delete_aws_services(self):
+        logger.info("Deleting AWS Services associated with the ETL pipeline")
         self.cluster_manager.delete_cluster()
         self.role_manager.delete_role()
